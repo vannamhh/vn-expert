@@ -17,21 +17,10 @@ function vn_builder_expert()
     'directives' => array('ux-text-editor'),
     'allow' => array('text'),
     'options' => array(
-      'style' => array(
-        'type'    => 'select',
-        'heading' => 'Style',
-        'default' => 'normal',
-        'options' => array(
-          'normal'      => 'Normal',
-          'center'      => 'Center',
-          'bold'        => 'Left Bold',
-          'bold-center' => 'Center Bold',
-        ),
-      ),
       'speaker' => array(
         'type'      => 'textfield',
         'heading'   => 'Speaker',
-        'default'   => __('Giảng viên chính', 'vntheme'),
+        'default'   => 'Giảng viên chính',
       ),
       'name' => array(
         'type'       => 'textfield',
@@ -64,7 +53,7 @@ function vn_builder_expert()
       'class' => array(
         'type' => 'textfield',
         'heading' => 'CSS class',
-        'default' => '',
+        'default' => 'is-large',
       ),
       'visibility' => array(
         'type' => 'select',

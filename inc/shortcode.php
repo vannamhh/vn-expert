@@ -4,14 +4,14 @@ function vn_expert_shortcode($atts, $content = null)
 {
   extract(shortcode_atts(array(
     '_id' => 'expert-' . rand(),
-    'speaker' => __('Giảng viên chính', 'vntheme'),
+    'speaker' => 'Giảng viên chính',
     'name' => '',
     'jobtitle' => '',
     'image' => '',
-    'padding'     => '',
-    'padding__md' => '',
+    'padding'     => '6rem 0px 2rem 0px',
+    'padding__md' => '2rem 0px 1rem 0px',
     'padding__sm'  => '',
-    'class' => '',
+    'class' => 'is-large',
     'visibility' => '',
   ), $atts));
 

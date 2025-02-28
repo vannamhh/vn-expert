@@ -3,7 +3,7 @@
  * Plugin Name: VN Expert
  * Plugin URI: https://wpmasterynow.com
  * Description: Custom expert shortcode for Flatsome theme
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Van Nam
  * Author URI: https://wpmasterynow.com
  * Text Domain: vn-expert
