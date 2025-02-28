@@ -53,8 +53,7 @@ VN Expert extends Flatsome theme's UX Builder by adding a customizable expert/te
 [vn_expert 
     style="normal"
     speaker="Giảng viên chính"
-    title="Anh"
-    name="Nguyễn Văn A"
+    name="Anh Nguyễn Văn A"
     jobtitle="Business Manager"
     image="path/to/image.jpg"
 ]
@@ -68,7 +67,6 @@ Your content here
 |-----------|--------|----------------|-----------------------|
 | style     | string | normal         | Layout style          |
 | speaker   | string | Giảng viên chính| Speaker title         |
-| title     | string | Anh            | Title prefix         |
 | name      | string |                | Expert's name        |
 | jobtitle  | string |                | Position/Job title   |
 | image     | url    |                | Expert's photo       |
