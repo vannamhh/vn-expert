@@ -165,7 +165,7 @@ class VN_Expert_Shortcode
 
     // Generate HTML elements
     $speaker_html = $speaker ? '<p>' . wp_kses_post($speaker) . '</p>' : '';
-    $name_html = $name ? '<p>' . wp_kses_post($name) . '</p>' : '';
+    $name_html = $name ? '<p style="color:rgb(255, 222, 89)">' . wp_kses_post($name) . '</p>' : '';
     $job_title_html = $jobtitle ? '<p>' . wp_kses_post($jobtitle) . '</p>' : '';
 
     // Return final shortcode
@@ -206,7 +206,7 @@ class VN_Expert_Shortcode
               <div class="text is-xxxlarge strong">
                 %5$s
               </div>
-              <div class="text is-larger strong mb-0" style="color:rgb(255, 222, 89)">
+              <div class="text is-larger strong mb-0">
                 %6$s
               </div>
               <div class="text is-larger is-italic">
