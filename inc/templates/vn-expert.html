@@ -1,0 +1,51 @@
+<div id="{{::$id}}" class="row align-bottom {{ shortcode.options.visibility }} {{ shortcode.options.class }}">
+  <!-- Left Column -->
+  <div class="col medium-7 small-12 large-7">
+    <div class="col-inner" ng-style="{
+      padding: shortcode.options.padding,
+    }">
+      <!-- Main Title -->
+      <div class="text is-xxxlarge strong">
+        <p>{{shortcode.options.speaker}}</p>
+      </div>
+
+      <!-- Name -->
+      <div id="text-{{::$id}}" class="text is-larger strong mb-0">
+        <p>{{shortcode.options.title}} {{shortcode.options.name}}</p>
+      </div>
+
+      <!-- Position -->
+      <div class="text is-larger is-italic">
+        <p>{{shortcode.options.jobtitle}}</p>
+      </div>
+
+      <!-- Bio -->
+      <content></content>
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="col pb-0 medium-5 small-12 large-5">
+    <div class="col-inner">
+      <div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1496459970">
+        <div class="img-inner dark">
+          <img loading="lazy" decoding="async" width="700" height="700" ng-if="shortcode.options.image" wp-attachment="shortcode.options.image" class="attachment-large size-large">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+
+  #text-{{::$id}} {
+    color: rgb(255, 222, 89);
+  }
+
+  #text-{{::$id}}>* {
+    color: rgb(255, 222, 89);
+  }
+
+  #image_1496459970 {
+    width: 100%;
+  }
+</style>
