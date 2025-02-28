@@ -51,7 +51,7 @@ class VN_Expert_Shortcode
     // Có thể nội dung chứa shortcode không hợp lệ hoặc bị lỗi khi render
     // Thêm kiểm tra nội dung
     if (empty($content_full)) {
-        return '';
+      return '';
     }
     $detail_btn = sprintf('<a href="#%s">%s</a>', $_id, esc_html__('Xem thêm chi tiết', 'vn-expert'));
 
@@ -114,12 +114,12 @@ class VN_Expert_Shortcode
   {
     // Thêm sanitize input
     $p = wp_kses_post($p);
-    
+
     // Thêm kiểm tra tags hợp lệ
     if (!preg_match_all('/<[^>]+>/', $p, $tags, PREG_OFFSET_CAPTURE)) {
-        // Nếu không có tags, trả về text đơn giản
-        $words = array_slice($p_words, 0, $words_remaining);
-        return '<p>' . implode(' ', $words) . '... ' . $detail_btn . '</p>';
+      // Nếu không có tags, trả về text đơn giản
+      $words = array_slice($p_words, 0, $words_remaining);
+      return '<p>' . implode(' ', $words) . '... ' . $detail_btn . '</p>';
     }
 
     preg_match_all('/<[^>]+>/', $p, $tags, PREG_OFFSET_CAPTURE);
@@ -165,7 +165,7 @@ class VN_Expert_Shortcode
 
     // Generate HTML elements
     $speaker_html = $speaker ? '<p>' . wp_kses_post($speaker) . '</p>' : '';
-    $name_html = $name ? '<p style="color:rgb(255, 222, 89)">' . wp_kses_post($name) . '</p>' : '';
+    $name_html = $name ? '<p>' . wp_kses_post($name) . '</p>' : '';
     $job_title_html = $jobtitle ? '<p>' . wp_kses_post($jobtitle) . '</p>' : '';
 
     // Return final shortcode
@@ -201,33 +201,23 @@ class VN_Expert_Shortcode
     $content_full
   ) {
     return sprintf(
-          '<div class="row align-bottom %1$s">
+      '[row class="align-bottom %1$s"]
             [col span="7" span__sm="12" padding="%2$s" padding__md="%3$s" padding__sm="%4$s"]
-              <div class="text is-xxxlarge strong">
-                %5$s
-              </div>
-              <div class="text is-larger strong mb-0">
-                %6$s
-              </div>
-              <div class="text is-larger is-italic">
-                %7$s
-              </div>
-              <div class="expert-content">
-                %8$s
-              </div>
-            [/col]
-            <div class="col medium-5 small-12 large-5 pb-0">
-              <div class="col-inner">
-                [ux_image id="%9$s" width__sm="100" width__md="100"]
-              </div>
-            </div>
-          </div>
-            [lightbox id="%10$s" width="800px" padding="20px"]
                 [ux_text class="is-xxxlarge strong"]%5$s[/ux_text]
-                [ux_text text_color="#04643c" class="is-larger strong mb-0"]%6$s[/ux_text]
+                [ux_text text_color="rgb(255, 222, 89)" class="is-larger strong mb-0"]%6$s[/ux_text]
                 [ux_text class="is-larger is-italic"]%7$s[/ux_text]
-                %11$s
-            [/lightbox]',
+                [ux_text class="expert-content"]%8$s[/ux_text]
+            [/col]
+            [col span="5" span__sm="12" class="pb-0"]
+                [ux_image id="%9$s" width__sm="100" width__md="100"]
+            [/col]
+        [/row]
+        [lightbox id="%10$s" width="800px" padding="20px"]
+            [ux_text class="is-xxxlarge strong"]%5$s[/ux_text]
+            [ux_text text_color="#04643c" class="is-larger strong mb-0"]%6$s[/ux_text]
+            [ux_text class="is-larger is-italic"]%7$s[/ux_text]
+            %11$s
+        [/lightbox]',
       esc_attr($classes),
       esc_attr($padding),
       esc_attr($padding__md),
