@@ -33,11 +33,6 @@ function vn_builder_expert()
         'heading'   => 'Speaker',
         'default'   => __('Giảng viên chính', 'vntheme'),
       ),
-      'title' => array(
-        'type'       => 'textfield',
-        'heading'    => 'Title',
-        'default'    => __('Anh', 'vntheme'),
-      ),
       'name' => array(
         'type'       => 'textfield',
         'heading'    => 'Name',

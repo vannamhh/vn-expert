@@ -5,7 +5,6 @@ function vn_expert_shortcode($atts, $content = null)
   extract(shortcode_atts(array(
     '_id' => 'expert-' . rand(),
     'speaker' => __('Giảng viên chính', 'vntheme'),
-    'title' => __('Anh', 'vntheme'),
     'name' => '',
     'jobtitle' => '',
     'image' => '',
@@ -32,7 +31,7 @@ function vn_expert_shortcode($atts, $content = null)
   if ($speaker) $speaker_html = '<p>' . wp_kses_post($speaker) . '</p>';
 
   $name_html = '';
-  if ($title && $name) $name_html = sprintf('<p>%s %s</p>', wp_kses_post($title), wp_kses_post($name));
+  if ($name) $name_html = sprintf('<p>%s</p>', wp_kses_post($name));
 
   $job_title_html = '';
   if ($jobtitle) $job_title_html = '<p>' . wp_kses_post($jobtitle) . '</p>';
