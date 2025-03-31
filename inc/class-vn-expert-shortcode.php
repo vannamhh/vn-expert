@@ -73,11 +73,11 @@ class VN_Expert_Shortcode {
 		if ( empty( $content_full ) ) {
 			return '';
 		}
-		$detail_btn = sprintf( '<a href="#%s">%s</a>', $_id, esc_html__( 'Xem thêm chi tiết', 'vn-expert' ) );
+		$detail_btn = sprintf( '<a href="#%s" class="btn-readmore-link">%s</a>', $_id, esc_html__( 'Xem thêm chi tiết', 'vn-expert' ) );
 
 		// Get total word count.
 		$total_words = str_word_count(
-			strip_tags( $content_full ),
+			wp_strip_all_tags( $content_full ),
 			0,
 			'àáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳýỵỷỹ'
 		);
@@ -85,7 +85,7 @@ class VN_Expert_Shortcode {
 		if ( $total_words <= $word_limit ) {
 			return $content_full;
 		}
-		return force_balance_tags( flatsome_string_limit_words( $content, $word_limit ) . '... ' ) . $detail_btn;
+		return force_balance_tags( flatsome_string_limit_words( $content, $word_limit ) . '... ' . $detail_btn );
 	}
 
 	/**
@@ -218,6 +218,9 @@ class VN_Expert_Shortcode {
 	<style>
 		.expert-content a:hover {
 		color: rgb(255, 222, 89);
+		}
+		.btn-readmore-link {
+			font-style: normal;
 		}
 
 		@media screen and (max-width: 34.3125em) {
